@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Gratitude</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .message-container {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            padding: 20px 30px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .message-container h1 {
+            color: #333333;
+            margin-bottom: 20px;
+            animation: bounce 1.5s infinite;
+        }
+        .message-container p {
+            color: #555555;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .message-container p span {
+            color: #ff6f61;
+            font-weight: bold;
+        }
+        .heart {
+            font-size: 24px;
+            color: #ff6f61;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="message-container">
+        <h1>Thank You! ❤️</h1>
+        <p>
+            Honestly, I’m still at a loss for words—thank you so much for making my birthday so special. 🎉  
+            Turning <span>22</span> felt like just another year, but you went out of your way to make it unforgettable. 🎂  
+        </p>
+        <p>
+            Everything you did—the effort, the thoughtfulness, and how you made me feel so cared for—it truly means the world to me.  
+            You made me feel so loved in a way that I’ll never forget, and I can’t believe how lucky I am to have someone as amazing as you in my life. 💕  
+        </p>
+        <p>
+            I’m so grateful that our paths crossed, and I get to share moments like this with you. 🌟  
+            This wasn’t just a birthday; it was a memory I’ll cherish forever, all because of you.  
+            You’re incredible, and I’m endlessly thankful for you. <span class="heart">💖</span>
+        </p>
+    </div>
+</body>
+</html>
