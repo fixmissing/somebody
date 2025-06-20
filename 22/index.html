@@ -1,105 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You!!!</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .message-container {
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            padding: 20px 30px;
-            text-align: center;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .message-container h1 {
-            color: #333333;
-            margin-bottom: 20px;
-            animation: bounce 1.5s infinite;
-        }
-        .message-container p {
-            color: #555555;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .message-container p span {
-            color: #ff6f61;
-            font-weight: bold;
-        }
-        .heart {
-            font-size: 24px;
-            color: #ff6f61;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-        audio {
-            margin-top: 20px;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Ulang Tahun, Aena</title>
+  <style>
+    body {
+      margin: 0;
+      background: url('images/aena_bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #message {
+      font-size: 1.5em;
+      max-width: 700px;
+      line-height: 1.6em;
+      margin-top: 20px;
+    }
+
+    #openLetter {
+      margin-top: 30px;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid white;
+      padding: 10px 20px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    #letterModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    #letterContent {
+      max-width: 800px;
+      font-size: 1.2em;
+      line-height: 1.8em;
+    }
+  </style>
 </head>
 <body>
-    <div class="message-container">
-        <h1>Thank You! ❤️</h1>
-        <p>
-            Honestly, I’m still at a loss for words—thank you so much for making my birthday so special. 🎉  
-            Turning <span>22</span> felt like just another year, but you went out of your way to make it unforgettable. 🎂  
-        </p>
-        <p>
-            Everything you did—the effort, the thoughtfulness, and how you made me feel so cared for—it truly means the world to me.  
-            You made me feel so loved in a way that I’ll never forget, and I can’t believe how lucky I am to have someone as amazing as you in my life. 💕  
-        </p>
-        <p>
-            I’m so grateful that our paths crossed, and I get to share moments like this with you. 🌟  
-            This wasn’t just a birthday; it was a memory I’ll cherish forever, all because of you.  
-            You’re incredible, and I’m endlessly thankful for you. <span class="heart">💖</span>
-        </p>
-        <!-- Audio Player -->
-        <audio controls autoplay loop>
-            <source src="pawl.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
+
+<div class="overlay">
+  <h1>Happy 22nd Birthday, Aena 🌧️</h1>
+  <div id="message">...</div>
+  <button id="openLetter">Open Letter 💌</button>
+</div>
+
+<div id="letterModal">
+  <div id="letterContent">
+    <p>Dear Aena,</p>
+    <p>Thank you for being light and laughter, even when your own days were heavy. I know there are times where I might’ve made things louder than they should be. For that, I’m sorry.</p>
+    <p>You don’t have to be the sunshine every day. You don’t have to carry the world when it forgets to carry you back. If ever you feel like hiding from the noise, know this: I’ll be your quiet. Your home.</p>
+    <p>Happy birthday, love. May this year embrace you gently. With warmth, with joy, with rest.</p>
+    <p>With all of me,</p>
+    <p>Bebekk ❤️</p>
+  </div>
+</div>
+
+<audio autoplay loop hidden>
+  <source src="audio/juni_instrumental.mp3" type="audio/mpeg">
+</audio>
+<audio autoplay loop hidden>
+  <source src="audio/rain.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const messages = [
+    "Hi, Aena.",
+    "Happy 22nd birthday 🎂",
+    "Juni, you came with calmness...",
+    "Always cheerful, always warm.",
+    "People see you smile so easily,",
+    "But I know — you’re holding back so much pain.",
+    "They say you're bright and radiant,",
+    "But they don’t see how tired you are.",
+    "Always adjusting, always reading the room,",
+    "Even when your heart is in pieces.",
+    "Aena, you don’t always have to be okay.",
+    "You don’t have to smile all the time.",
+    "It’s okay to disappear for a while,",
+    "To choose your peace, your own happiness.",
+    "You’re allowed to be quiet,",
+    "Even when the world stays loud.",
+    "So today...",
+    "Hold yourself gently.",
+    "You deserve to be understood too.",
+    "And I’m sorry, for the noise I bring sometimes.",
+    "I’m learning, still.",
+    "But one thing is certain —",
+    "I love you deeply, patiently, and without conditions.",
+    "Happy Birthday, Aena Putri Bethari. 🎈"
+  ];
+
+  let index = 0;
+  const msgEl = document.getElementById("message");
+  function showMessage() {
+    if (index < messages.length) {
+      msgEl.innerText = messages[index++];
+      setTimeout(showMessage, 3500);
+    }
+  }
+  showMessage();
+
+  document.getElementById("openLetter").onclick = function () {
+    document.getElementById("letterModal").style.display = "flex";
+  };
+</script>
+
 </body>
 </html>
