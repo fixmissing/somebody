@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #1a1a2e;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+.title {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 2.5em;
+  color: #ffe6f0;
+  text-shadow: 1px 1px 5px #ff8fab;
+}
+
+.btn {
+  display: block;
+  margin: 30px auto;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  background-color: #ff8fab;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ff5d8f;
+}
+
+.compliments-container {
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.8em;
+  padding: 0 20px;
+}
+
+.wish-section {
+  max-width: 700px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.wish-section.hidden {
+  display: none;
+}
+
+.wish-text {
+  font-size: 1.2em;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  line-height: 1.8em;
+}
+
+.photo-sign {
+  margin-top: 20px;
+}
+
+.photo {
+  width: 180px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.signature {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.1em;
+  color: #ffb6c1;
+}
+
+.background-flowers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
