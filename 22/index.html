@@ -5,17 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Birthday, Aena 🎂</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ffe0ec, #ffd6eb);
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    .title {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 2.5em;
+      color: #d63384;
+    }
+
+    .btn {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      background-color: #ff8fab;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .compliments-container {
+      max-width: 600px;
+      margin: 0 auto;
+      margin-top: 20px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      height: 60vh;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    .bubble {
+      background: #ffc8dd;
+      padding: 12px 18px;
+      border-radius: 25px;
+      max-width: 80%;
+      align-self: center;
+      font-size: 1.1em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .wish-section {
+      display: none;
+      max-width: 700px;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    .wish-text {
+      background: rgba(255, 255, 255, 0.4);
+      padding: 20px;
+      border-radius: 20px;
+      font-size: 1.2em;
+      color: #5a2b43;
+    }
+
+    .photo-sign {
+      margin-top: 20px;
+    }
+
+    .photo {
+      width: 160px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .signature {
+      display: block;
+      margin-top: 10px;
+      color: #d63384;
+      font-weight: bold;
+    }
+
+    .background-flowers {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
   <audio src="audio/juni_instrumental.mp3" id="bgMusic" autoplay loop></audio>
   <audio src="audio/rain.mp3" autoplay loop hidden></audio>
 
-  <h1 class="title">Happy 22nd Birthday, Aena 🌧️</h1>
+  <h1 class="title">Happy 22nd Birthday, Aena 🌸</h1>
   <button id="showBtn" class="btn">Hey... I have something to say 💖</button>
 
   <div id="complimentsContainer" class="compliments-container"></div>
 
-  <div id="wishSection" class="wish-section hidden">
+  <div id="wishSection" class="wish-section">
     <p class="wish-text">
       Dear Aena,<br><br>
       Thank you for being light and laughter, even when your days felt heavy.<br>
@@ -51,6 +151,42 @@
     </svg>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    const compliments = [
+      "Hi, Aena 🌸",
+      "Happy 22nd Birthday 🎂",
+      "You’ve always been so warm and bright...",
+      "Even when the world forgets to notice your pain.",
+      "This is a little corner of the world that understands you.",
+      "You don’t always need to smile.",
+      "You don’t always need to be strong.",
+      "Today, just be you.",
+      "Hold yourself gently. Breathe. Exist.",
+      "And know that I love you — quietly, truly, endlessly. 💖",
+      "Happy birthday, my Aena. From Bebekk 🌼"
+    ];
+
+    let i = 0;
+    const container = document.getElementById("complimentsContainer");
+
+    function showCompliments() {
+      if (i < compliments.length) {
+        const p = document.createElement("div");
+        p.className = "bubble";
+        p.textContent = compliments[i++];
+        container.appendChild(p);
+        container.scrollTop = container.scrollHeight;
+        setTimeout(showCompliments, 2600);
+      } else {
+        document.getElementById("wishSection").style.display = "block";
+        container.scrollTop = container.scrollHeight;
+      }
+    }
+
+    document.getElementById("showBtn").addEventListener("click", () => {
+      document.getElementById("showBtn").style.display = "none";
+      showCompliments();
+    });
+  </script>
 </body>
 </html>
