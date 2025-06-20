@@ -107,7 +107,8 @@
   </style>
 </head>
 <body>
-  <audio src="donne_juni.mp3" id="bgMusic" autoplay loop></audio>
+  <audio src="22/donne_juni.mp3" id="bgMusic" loop></audio>
+  <audio src="audio/rain.mp3" autoplay loop hidden></audio>
 
   <h1 class="title">Happy 22nd Birthday, Aena 🌸</h1>
   <button id="showBtn" class="btn">Hey... I have something to say 💖</button>
@@ -211,9 +212,25 @@
     }
 
     document.getElementById("showBtn").addEventListener("click", () => {
-      document.getElementById("showBtn").style.display = "none";
-      showCompliments();
+  const music = document.getElementById("bgMusic");
+  music.play().catch(e => {
+    console.log("Autoplay prevented:", e);
+  });
+  document.getElementById("showBtn").style.display = "none";
+  showCompliments();
     });
   </script>
+<div id="scrollPopup" style="display: none; position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #ff8fab; color: white; padding: 12px 24px; border-radius: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); font-size: 1em; z-index: 1000; animation: fadeIn 0.5s ease-in-out;">
+  🧸 Jangan lupa scroll ke bawah yaa 💖
+</div>
+
+<script>
+  // Tampilkan popup scroll setelah beberapa detik
+  setTimeout(() => {
+    const popup = document.getElementById("scrollPopup");
+    popup.style.display = "block";
+    setTimeout(() => popup.style.display = "none", 6000);
+  }, 5000);
+</script>
 </body>
 </html>
